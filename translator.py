@@ -15,18 +15,15 @@ class Translator:
         print("4. Exit")
 
     def loadDictionary(self, dict):
-        d = di.Dictionary(dict)
+        self.d = di.Dictionary(dict)
 
     def handleAdd(self, entry):
-        # entry is a tuple <parola_aliena> <traduzione1 traduzione2 ...>
-        parolaAliena = entry[0]
-
-        pass
+        self.d.addWord(entry)
 
     def handleTranslate(self, query):
-        # query is a string <parola_aliena>
-        pass
+        self.d.translate(query)
 
     def handleWildCard(self,query):
+
         # query is a string with a ? --> <par?la_aliena>
         pass

@@ -1,12 +1,11 @@
 import translator as tr
 
 t = tr.Translator()
-
+t.loadDictionary("dictionary.txt")
 
 while True:
 
     t.printMenu()
-    t.loadDictionary("dictionary.txt")
     txtIn = input()
 
     if int(txtIn) == 1:
@@ -22,7 +21,10 @@ while True:
                 else:
                     print("Non sono ammessi caratteri diversi da lettere")
                     txtIn = input()
-        entry =(pezzi[0], pezzi[1])
+        traduzioni = []
+        traduzioni.extend(pezzi)
+        traduzioni.pop(0)
+        entry =(pezzi[0], traduzioni)
         t.handleAdd(entry)
 
     elif int(txtIn) == 2:
@@ -40,6 +42,6 @@ while True:
 
     elif int(txtIn) == 3:
         pass
-    
+
     elif int(txtIn) == 4:
         break
