@@ -1,3 +1,5 @@
+import re
+
 import translator as tr
 
 t = tr.Translator()
@@ -41,7 +43,16 @@ while True:
         t.handleTranslate(txtIn)
 
     elif int(txtIn) == 3:
-        pass
+        print("Ok, quale parola devo cercare?")
+        txtIn = input()
+        controllo = False
+        while not controllo:
+            if re.fullmatch(r'[a-zA-Z?]+', txtIn):
+                t.handleWildCard(txtIn.lower())
+                controllo = True
+            else:
+                print("La parola inserita può contenere solo lettere e '?'")
+                txtIn = input()
 
     elif int(txtIn) == 4:
         break

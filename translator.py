@@ -24,6 +24,4 @@ class Translator:
         self.d.translate(query)
 
     def handleWildCard(self,query):
-
-        # query is a string with a ? --> <par?la_aliena>
-        pass
+        self.d.translateWordWildCard(query)

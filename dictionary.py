@@ -38,5 +38,6 @@ class Dictionary:
         if not controllo:
             print("La parola non è presente nel dizionario")
 
-    def translateWordWildCard(self):
+    def translateWordWildCard(self, query):
+
         pass
