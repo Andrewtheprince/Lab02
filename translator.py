@@ -3,7 +3,7 @@ import dictionary as di
 class Translator:
 
     def __init__(self):
-        pass
+        self.d = None
 
     def printMenu(self):
         print("--------------------------------")

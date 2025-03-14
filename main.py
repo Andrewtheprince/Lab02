@@ -13,12 +13,12 @@ while True:
     if int(txtIn) == 1:
         print("Ok, quale parola devo aggiungere?")
         txtIn = input()
-        controllo = False
+        control = False
         pezzi = txtIn.split(" ")
-        while not controllo:
+        while not control:
             for s in pezzi:
                 if s.isalpha():
-                    controllo = True
+                    control = True
                     s.lower()
                 else:
                     print("Non sono ammessi caratteri diversi da lettere")
@@ -32,10 +32,10 @@ while True:
     elif int(txtIn) == 2:
         print("Ok, quale parola devo tradurre?")
         txtIn=input()
-        controllo = False
-        while not controllo:
+        control = False
+        while not control:
             if txtIn.isalpha():
-                controllo = True
+                control = True
                 txtIn.lower()
             else:
                 print("Non sono ammessi caratteri diversi da lettere")
@@ -45,11 +45,11 @@ while True:
     elif int(txtIn) == 3:
         print("Ok, quale parola devo cercare?")
         txtIn = input()
-        controllo = False
-        while not controllo:
+        control = False
+        while not control:
             if re.fullmatch(r'[a-zA-Z?]+', txtIn):
                 t.handleWildCard(txtIn.lower())
-                controllo = True
+                control = True
             else:
                 print("La parola inserita può contenere solo lettere e '?'")
                 txtIn = input()

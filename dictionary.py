@@ -4,8 +4,7 @@ class Dictionary:
         riga = infile.readline()
         while len(riga) != 0:
             pezzi = riga.strip().split(" ")
-            traduzioni = []
-            traduzioni.append(pezzi[1])
+            traduzioni = [pezzi[1]]
             dizionario[pezzi[0]]=traduzioni
             riga = infile.readline()
         infile.close()
@@ -39,5 +38,17 @@ class Dictionary:
             print("La parola non è presente nel dizionario")
 
     def translateWordWildCard(self, query):
-
-        pass
+        pezzi = query.split("?")
+        control = False
+        for chiave, valore in self.dizionario.items():
+            if (pezzi[0] in chiave) and (pezzi[1] in chiave ) and (len(chiave) == len(query)):
+                contatore = 0
+                for s in chiave:
+                    if s not in query:
+                        contatore += 1
+                if contatore <= 1:
+                    print(chiave)
+                    print(valore)
+                    control = True
+        if not control:
+            print("La parola non è presente nel dizionario")
